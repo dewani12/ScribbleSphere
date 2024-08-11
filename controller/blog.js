@@ -10,9 +10,9 @@ export const getBlogs = async (req, res) => {
     }
 }
 
-export const createBlogs = async (req, res) => {
+export const createBlog = async (req, res) => {
     try {
-        const newBlog = await new Blog(req.body)
+        const newBlog = new Blog(req.body)
         await newBlog.save()
 
         return res.status(201).json({mssg: "Blog created!"})

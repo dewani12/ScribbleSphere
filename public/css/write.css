@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rajdhani", sans-serif;
+} 
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.page{
+    padding: 12px 45px;
+}
+
+.container{
+    margin: 18px 0;
+}
+
+.input-1{
+    width: 320px;
+    padding: 3px 5px;
+    outline: none;
+    margin: 8px 0;
+}
+
+.input-2{
+    width: 180px;
+    padding: 3px 5px;
+    outline: none;
+}
+
+.image{
+    margin-top: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    height: 100px;
+}
+
+.btn-2{
+    background-color: black;
+    border-radius: 5px;
+    color:white;
+    padding: 3px 20px;
+}

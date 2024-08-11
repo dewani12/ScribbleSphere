@@ -1,9 +1,17 @@
 import User from '../model/user.js'
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 // const handleErrors = (err) => {
 //     console.log(err.message, err.code)
 // }
+
+const maxAge = 3 * 24 * 60 * 60
+const createToken = (id) => { 
+    return jwt.sign({ id },process.env.SECRET_KEY_JWT, {
+        expiresIn: maxAge
+    })
+}
 
 export const signup = async (req, res) => {
     try {
@@ -23,7 +31,11 @@ export const signup = async (req, res) => {
         })
 
         await createdUser.save()
-        return res.status(201).json({ mssg: "User created!" })
+
+        const token = createToken(createdUser._id)
+        res.cookie('jwt', token, {maxAge: maxAge * 1000})
+
+        return res.status(201).json({ mssg: "User created!" , user: createdUser._id})
     } catch (error) {
         // handleErrors(error)
         console.log("Error: " + error)
@@ -36,10 +48,16 @@ export const login = async (req, res) => {
         const { email, password } = req.body
 
         const user = await User.findOne({ email })
+        if(!user){
+            return res.status(400).json({ mssg: "Invalid credentials!" })
+        }
+        
         const passwordMatch = await bcrypt.compare(password, user.password)
-        if (!user || !passwordMatch) {
+        if (!passwordMatch) {
             return res.status(400).json({ mssg: "Invalid credentials!" })
         } else {
+            const token = createToken(user._id)
+            res.cookie('jwt', token, {maxAge: maxAge * 1000})
             return res.status(200).json({ mssg: "User logged in!" })
         }
     } catch (error) {
