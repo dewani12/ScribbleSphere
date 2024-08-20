@@ -10,43 +10,80 @@
 html,body{
     height: 100%;
     width: 100%;
+    background-color: #F9F9F9;
 }
 
 .page{
-    padding: 12px 45px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .container{
-    margin: 18px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .input-1{
-    width: 320px;
+    width: 350px;
     padding: 3px 5px;
     outline: none;
-    margin: 8px 0;
+    margin-top: 12px;
 }
 
-.input-2{
-    width: 180px;
-    padding: 3px 5px;
-    outline: none;
-}
-
-.image{
-    margin-top: 8px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
+.desc{
+    height: 80px;
+    resize: none;
 }
 
 .content{
-    height: 100px;
+    height: 110px;
+    resize: none;
 }
 
 .btn-2{
     background-color: black;
     border-radius: 5px;
     color:white;
-    padding: 3px 20px;
+    padding: 5px 20px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#error-message{
+    color: red;
+    font-size: 15px;
+    display: none;
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+        width: 90%; 
+    }
+
+    .input-1 {
+        width: 100% ; 
+        padding: 8px;
+    }
+
+    .desc, .content {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .btn-2 {
+        padding: 8px;
+        font-size: 14px; 
+    }
+
+    #error-message {
+        font-size: 14px; 
+    }
 }

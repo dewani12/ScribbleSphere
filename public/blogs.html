@@ -15,58 +15,20 @@
     <div class="page">
         <div class="template-1">
             <div class="blog-parent">
-                <h1>Top Blogs of 2024!</h1>
+                <h2>Top Blogs of 2024!</h2>
                 <div id="blogs-container">
                 
                 </div>
             </div>
-            <div class="side-bar">
-                <h5>Recommended topics</h5>
-            </div>
+            <!-- <div class="side-bar">
+                <h3>Recommended topics</h3>
+                <div id="cat">
+                    
+                </div>
+            </div> -->
         </div>
     </div>
-    <script>
-        function truncateText(text, maxLength) {
-            if (text.length <= maxLength) {
-                return text;
-            }
-
-            let truncatedText = text.substring(0, maxLength);
-            const lastSpaceIndex = truncatedText.lastIndexOf(' ');
-
-            if (lastSpaceIndex === -1) {
-                return truncatedText + '...';
-            }
-            return text.substring(0, lastSpaceIndex) + '...';
-        }
-        async function fetchBlogs() {
-            try {
-                const response = await fetch('http://localhost:3000/blog/getBlogs');
-                const blogs = await response.json();
-                console.log(blogs);
-                const container = document.getElementById('blogs-container');
-                container.innerHTML = blogs.map(blog => `
-            <div class="container">
-                <div class="sec-1">
-                    <div class="line-1"><i class="fa-solid fa-user"></i><span>${blog.author}</span></div>
-                    <div><h5>${blog.title}</h5></div>
-                    <div>${truncateText(blog.description,100)}</div>
-                    <div class="line-4">
-                        <div>${new Date(blog.createdAt).toLocaleDateString()}</div>
-                        <div><i class="fa-regular fa-heart"></i><span>${blog.likes}</span></div>
-                        <div><i class="fa-regular fa-copy"></i></div>
-                    </div>
-                </div>
-                <div class="sec-2"><img class="short_img" src=${blog.imgUrl} alt=""></div>
-            </div>`
-                ).join(' ')
-            }
-            catch (err) {
-                console.error('Error fetching blogs: ' + err);
-            }
-        }
-        document.addEventListener('DOMContentLoaded', fetchBlogs);
-    </script>
+    <script src="js/blog1.js"></script>
 </body>
 
 </html>

@@ -5,5 +5,6 @@ const router = express.Router()
 
 router.get('/getblogs', getBlogs)
 router.post('/createblog', createBlog)
+// router.post('/blog/:slug', likeBlog);
 
 export default router

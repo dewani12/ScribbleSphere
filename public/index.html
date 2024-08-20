@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScribbleSphere</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/blogs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <nav>
         <div class="logo">ScribbleSphere</div>
-        <div class="menu">
+        <div id="menu">
             <ul>
-                <a href="/blogs.html" class="a"><li>Blogs</li></a>
-                <a href="/create-blog.html" class="a"><li><img class="write" src="/assets/write.png" alt="">Write</li></a>
-                <a href="/login.html" class="a"><li>LogIn</li></a>
-                <a href="/signup.html"><li><span class="btn-1">SignUp</span></li></a>
+                <a href="/blogs.html" class="a">
+                    <li>Blogs</li>
+                </a>
+                <a class="write-nav" href="/create-blog" class="a">
+                    <li><img class="write" src="/assets/write.png" alt="">Write</li>
+                </a>
+                <a href="/login.html" class="a">
+                    <li>LogIn</li>
+                </a>
+                <a href="/signup.html">
+                    <li><span class="btn-1">SignUp</span></li>
+                </a>
+                <div class="user-con">
+                    <li id="user-icon"><i class="fa-regular fa-user"></i></li>
+                    <div id="user-em">
+                        
+                    </div>
+                </div>
             </ul>
+            
         </div>
+        <div class="small">
+            <a class="write-nav" href="/create-blog" class="a">
+                <p><img class="write" src="/assets/write.png" alt="">Write</p>
+            </a>
+            <a href="/signup.html">
+                <p><span class="btn-1">SignUp</span></p>
+            </a>
+        </div>
+        
     </nav>
     <main>
         <div class="hero-sec">
-            <p class="line-1">Turn your Scribbles into Stories.</p>
-            <p class="line-2">A place where you can share your Thoughts.</p>
-            <p><span class="btn-2">Start reading &#8599;</span></p>
+            <p class="hero-line-1">Turn your Scribbles into Stories.</p>
+            <p class="hero-line-2">A place where you can share your Thoughts.</p>
+            <p><a href="/blogs.html"><span class="btn-2">Start reading <i class="fa-solid fa-arrow-up-right-from-square"></i></span></a></p>
         </div>
     </main>
+    <div class="main-blogs">
+        <h1>Top Blogs of 2024!</h1>
+        <div id="blogs-container">
+
+        </div>
+        <a href="/blogs.html"><span>Explore more...</span></a>
+    </div>
+    <script src="js/blog1.js"></script>
 </body>
+
 </html>

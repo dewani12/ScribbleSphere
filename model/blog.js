@@ -3,7 +3,8 @@ import mongoose,{Schema} from "mongoose";
 const blogSchema = new Schema({
     title: {
         type: String, 
-        required: true 
+        required: true,
+        unique:true
     },
     author: { 
         type: String, 
@@ -14,10 +15,14 @@ const blogSchema = new Schema({
         required: true 
     },
     category: { 
-        type: [String], 
-        default: [] 
+        type: [String],
+        default: [],
+        required:true
     },
-    imgUrl: { 
+    coverUrl: { 
+        type: String
+    },
+    thumbnailUrl: { 
         type: String
     },
     content: { 
@@ -30,12 +35,12 @@ const blogSchema = new Schema({
     },
     blogUrl: { 
         type: String, 
-        required: true 
+        required: true
     },
-    slug: {
-        type: String,
-        required: true,
-        unique: true
+    slug: { 
+        type: String, 
+        required: true, 
+        unique: true 
     }
 }, {
     timestamps: {

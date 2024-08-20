@@ -14,12 +14,13 @@
             <form action="POST">
                 <h3>SignUp</h3>
                 <div>
-                    <input id="fullname" type="text" placeholder='Enter your full name' class="input-1" />
+                    <input id="fullname" type="text" placeholder='Full name*' class="input-1" />
                     <br>
-                    <input id="email" type="email" placeholder='Enter your Email' class='input-1' />
+                    <input id="email" type="email" placeholder='Email address*' class='input-1' />
                     <br />
-                    <input id="password" type="password" placeholder='Enter your Password' class='input-1' />
+                    <input id="password" type="password" placeholder='Create password*' class='input-1' />
                 </div>
+                <div id="error-message">error</div>
                 <div class="mar"><span class="btn-2" onclick="submitForm()">Signup</span></div>
                 <div class="mar">Already have an account? <a href="/login.html">Login</a></div>
             </form>
@@ -30,6 +31,7 @@
             const fullname = document.getElementById('fullname').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
+            const errorMessageDiv = document.getElementById('error-message');
 
             const userData = {
                 fullname,
@@ -37,20 +39,21 @@
                 password
             };
             try {
-                const response = await fetch('http://localhost:3000/user/signup',{
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userData)
-            });
-            if(response.ok){
-                const result = await response.json();
-                console.log('User successfully registered!', result)
-                window.location.href = '/login.html';
-            }else{
-                console.log('Error!')
-            }
+                const response = await fetch('/user/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    window.location.href = '/login.html';
+                } else {
+                    errorMessageDiv.innerHTML = `${data.mssg}`;
+                    errorMessageDiv.style.display = 'block';
+                }
             } catch (error) {
                 console.log("Error " + error)
             }
