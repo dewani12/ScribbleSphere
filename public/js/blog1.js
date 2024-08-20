@@ -58,17 +58,6 @@ async function fetchBlogs(src) {
 //         `).join('')
 // }
 
-const user = document.getElementById('user-em')
-
-window.onload = () => {
-    const userEmail = localStorage.getItem('email');
-    if (userEmail) {
-        user.innerHTML = userEmail;
-    } else {
-        user.innerHTML = 'Guest';
-    }
-};
-
 document.addEventListener('DOMContentLoaded', function () {
     const path = window.location.pathname;
     console.log('Current path:', path);

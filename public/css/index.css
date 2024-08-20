@@ -98,7 +98,7 @@ main {
     border-radius: 30px;
     padding: 6px 15px;
     cursor: pointer;
-    font-weight: 600;
+    /* font-weight: 600; */
     display: flex;
     align-items: center;
     gap: 6px;
@@ -118,36 +118,12 @@ main {
     color: blue;
 }
 
-/* user email */
-.user-con {
-    position: relative;
-    /* display: inline-block; */
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#user-em {
-    font-size: 13px;
-    max-width: 125px;
-    white-space: normal;
-    word-wrap: break-word;
-    display: none;
-    position: absolute;
-    top: 130%;
-    left: 0;
-    background-color: #fff;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    padding: 3px 8px;
-    z-index: 10;
-}
-
 .small{
     display: none;
 }
 
-.user-con:hover #user-em {
-    display: block;
+.small li{
+    list-style-type: none;
 }
 
 @media (max-width: 600px) {
@@ -212,5 +188,10 @@ main {
     #blogs-container{
         width: 95%;
         margin: auto;
+    }
+
+    #user-icon{
+        font-size: 1.3rem;
+        margin-top:4px;
     }
 }
