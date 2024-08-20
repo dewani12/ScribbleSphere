@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const userEmail = localStorage.getItem('email');
 
     if (userName && userEmail) {
-        document.title = `${userName} - ScrribleSphere`
+        document.title = `${userName} - ScrribleSphere`;
         document.querySelector('.user-page .cont').innerHTML = `
             <div><i class="fa-solid fa-user"></i>${userName}</div>
             <div><i class="fa-solid fa-envelope"></i>${userEmail}</div>
             <div id="blogs">Loading blogs...</div>
         `;
-        fetchBlogs(userName);
+        fetchBlogs(userName); // Pass userName to fetchBlogs
     } else {
         document.querySelector('.user-page .cont').innerHTML = `
             <div>No user data found!</div>
@@ -28,11 +28,13 @@ function fetchBlogs(authorName) {
         })
         .then(data => {
             const blogsContainer = document.getElementById('blogs');
-            if (data.length > 0) {
+            const filteredBlogs = data.filter(blog => blog.author === authorName); // Filter blogs by authorName
+
+            if (filteredBlogs.length > 0) {
                 blogsContainer.innerHTML = `
                     <h4>Published Blogs:</h4>
                     <ul>
-                        ${data.map(blog => `<p><a href="blog.html?slug=${encodeURIComponent(blog.slug)}">${blog.title} &#8599;</a></p>`).join('')}
+                        ${filteredBlogs.map(blog => `<p><a href="blog.html?slug=${encodeURIComponent(blog.slug)}">${blog.title} &#8599;</a></p>`).join('')}
                     </ul>
                 `;
             } else {
