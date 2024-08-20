@@ -2,6 +2,8 @@
 >ScribbleSphere is a publishing platform where users can explore meaningful and thought-provoking stories on subjects they care about deeply.
 
 # Screenshots
+<img width="944" alt="Screenshot 2024-08-21 000707" src="https://github.com/user-attachments/assets/b9427a07-0a87-43b7-87e6-fa0b1cd4e6ec">
+
 
 # Features Implemented
 ## Frontend
