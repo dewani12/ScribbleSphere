@@ -32,13 +32,13 @@ html, body {
 }
 
 .blog-parent {
-    width: 100%; /* Full width on small screens */
-    max-width: 800px; /* Set a maximum width to avoid stretching too wide */
+    width: 100%; 
+    max-width: 800px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 16px auto; /* Center and add vertical margins */
-    padding: 0 16px; /* Add horizontal padding */
+    margin: 16px auto; 
+    padding: 0 16px; 
 }
 
 .side-bar {

@@ -106,7 +106,7 @@ main {
 }
 
 .main-blogs {
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -208,4 +208,17 @@ main {
 
 .cont i{
     margin-right: 5px;
+}
+
+.sec{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.sec a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
 }
