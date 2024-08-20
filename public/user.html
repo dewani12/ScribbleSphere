@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScribbleSphere</title>
+    <title>User - ScribbleSphere</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/blogs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <nav>
         <div class="logo">ScribbleSphere</div>
@@ -29,9 +26,12 @@
                 <a href="/signup.html">
                     <li><span class="btn-1">SignUp</span></li>
                 </a>
-                <a href="/user.html" class="a">
+                <div class="user-con">
                     <li id="user-icon"><i class="fa-regular fa-user"></i></li>
-                </a>
+                    <div id="user-em">
+                        
+                    </div>
+                </div>
             </ul>
             
         </div>
@@ -48,21 +48,10 @@
         </div>
         
     </nav>
-    <main>
-        <div class="hero-sec">
-            <p class="hero-line-1">Turn your Scribbles into Stories.</p>
-            <p class="hero-line-2">A place where you can share your Thoughts.</p>
-            <p><a href="/blogs.html"><span class="btn-2">Start reading <i class="fa-solid fa-arrow-up-right-from-square"></i></span></a></p>
+    <div class="user-page">
+        <div class="cont">
         </div>
-    </main>
-    <div class="main-blogs">
-        <h1>Top Blogs of 2024!</h1>
-        <div id="blogs-container">
-
-        </div>
-        <a href="/blogs.html"><span>Explore more...</span></a>
     </div>
-    <script src="js/blog1.js"></script>
+    <script src="js/user-page.js"></script>
 </body>
-
 </html>

@@ -134,8 +134,9 @@ html, body {
 
     .container {
         font-size: 15px; 
-        width: 95%;
+        width: 300px;
         margin: auto;
+        margin: 8px 0;
     }
 
     .line-1 {
