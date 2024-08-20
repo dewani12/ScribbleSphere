@@ -14,6 +14,11 @@ body {
     background-color: #F9F9F9;
 }
 
+.logo a{
+    text-decoration: none;
+    color: inherit;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -71,6 +76,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px #ddd solid;
 }
 
 .hero-sec {
@@ -198,12 +204,15 @@ main {
 }
 
 .cont{
+    font-size: 20px;
     padding: 10px 35px;
 }
 
 .cont div {
     /* border-bottom: 1.5px #ddd solid; */
     margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .cont i{
@@ -211,6 +220,7 @@ main {
 }
 
 .sec{
+    border-top: 1px #ddd solid;
     width: 100%;
     display: flex;
     justify-content: center;

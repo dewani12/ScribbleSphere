@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         document.querySelector('.user-page .cont').innerHTML = `
             <div>No user data found!</div>
+            <a href="/login.html" style="text-decoration: none; color: blue">LogIn</a>
         `;
     }
 });
