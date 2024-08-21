@@ -55,7 +55,7 @@ https://scribblesphere-it54.onrender.com
 git clone https://github.com/GauravDewani/ScribbleSphere.git
 cd ScribbleSphere
 npm i
-nodemon .\index.js
+node index.js
 ```
 
 # Team Member
